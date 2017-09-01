@@ -11,12 +11,12 @@ object Main extends App {
 
   rddOperations.writeRecordsToFile(rddOperations.tenRecordsOfRDD(pagecounts))
 
-  println("Total number of records: " + rddOperations.countOfRecords(pagecounts))
+  logger.info("Total number of records: "+ rddOperations.countOfRecords(pagecounts))
 
   val englishPages: RDD[String] = rddOperations.englishPages(pagecounts)
-  println("Count of English Pages: " + rddOperations.countOfRecords(englishPages))
+  logger.info("Count of English Pages: " + rddOperations.countOfRecords(englishPages))
 
-  println("Pages requested more than 200000 times are: " + rddOperations.mostRequestedPages(pagecounts))
+  logger.info("Pages requested more than 200000 times are: " + rddOperations.mostRequestedPages(pagecounts))
 
 }
 
